@@ -91,7 +91,7 @@ module ActiveAdmin
 
       def normalize_id(id)
         case id
-        when String, Symbol
+        when ActiveAdmin::Resource::Name, String, Symbol
           id.to_s.downcase.gsub ' ', '_'
         else
           raise TypeError, "#{id.class} isn't supported as a Menu ID"
