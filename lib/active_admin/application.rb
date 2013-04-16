@@ -255,6 +255,8 @@ module ActiveAdmin
         ::Sass::Engine::DEFAULT_OPTIONS[:load_paths] <<  File.expand_path("../../../app/assets/stylesheets", __FILE__)
       else
         require 'active_admin/sass/css_loader'
+        require 'sass/plugin'
+        require 'sass/plugin/configuration'
         ::Sass::Plugin.add_template_location(File.expand_path("../../../app/assets/stylesheets", __FILE__))
         ::Sass::Plugin.add_template_location(File.expand_path("../sass", __FILE__))
       end
