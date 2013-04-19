@@ -47,6 +47,13 @@ on Rails 3 application. To install, simply add the following to your Gemfile:
 
   gem 'activeadmin'
 
+Or if you use Rails 4 beta:
+
+  gem 'devise', github: 'plataformatec/devise', branch: :rails4
+  gem 'formtastic', github: 'justinfrench/formtastic', branch: "rails4beta"
+  gem 'activeadmin', github: 'gussan/active_admin', branch: :rails4
+  gem 'ransack', github: 'ernie/ransack', branch: "rails-4"
+
 After updating your bundle, run the installer
 
   $> rails generate active_admin:install
