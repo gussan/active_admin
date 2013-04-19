@@ -63,7 +63,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 # we need this routing path, named "logout_path", for testing
 route <<-EOS
   devise_scope :user do
-    match '/admin/logout' => 'active_admin/devise/sessions#destroy', :as => :logout
+    match '/admin/logout' => 'active_admin/devise/sessions#destroy', :as => :logout, :via => [:get, :post]
   end
 EOS
 
