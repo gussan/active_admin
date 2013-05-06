@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency("ransack", ">= 0.7.0")
   s.add_dependency("devise", ">= 1.1.2")
   s.add_dependency("formtastic", ">= 2.0.0")
-  s.add_dependency("inherited_resources", ">= 1.3.1")
+  s.add_dependency("inherited_resources", ">= 1.4.0")
   s.add_dependency("kaminari", ">= 0.13.0")
   s.add_dependency("sass", ">= 3.1.0")
   s.add_dependency("fastercsv", ">= 0")
