@@ -21,11 +21,11 @@ module ActiveAdmin
     # @returns [Resource, Page] Either the existing resource or the new one
     def add(resource)
       if has_key?(resource.resource_name)
-        existing_resource = find_by_key(resource.resource_name)
+        existing_resource = find_by_key(resource.resource_name.name)
         ensure_resource_classes_match!(existing_resource, resource)
         existing_resource
       else
-        @resource_hash[resource.resource_name] = resource
+        @resource_hash[resource.resource_name.name] = resource
       end
     end
 
@@ -46,12 +46,12 @@ module ActiveAdmin
 
     # @returns [Boolean] If the key has been registered in the collection
     def has_key?(resource_name)
-      @resource_hash.has_key?(resource_name)
+      @resource_hash.has_key?(resource_name.to_s)
     end
 
     # Finds a resource by a given key
     def find_by_key(resource_name)
-      @resource_hash[resource_name]
+      @resource_hash[resource_name.to_s]
     end
 
     # Finds a resource based on it's class. Looks up the class Heirarchy if its
@@ -79,7 +79,7 @@ module ActiveAdmin
       return unless existing_resource.respond_to?(:resource_class) && resource.respond_to?(:resource_class)
 
       if existing_resource.resource_class != resource.resource_class
-        raise ActiveAdmin::ResourceMismatchError, 
+        raise ActiveAdmin::ResourceMismatchError,
           "Tried to register #{resource.resource_class} as #{resource.resource_name} but already registered to #{existing_resource.resource_class}"
       end
     end
