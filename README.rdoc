@@ -49,6 +49,7 @@ on Rails 3 application. To install, simply add the following to your Gemfile:
 
 Or if you use Rails 4 beta:
 
+  gem 'responders', github: 'plataformatec/responders'
   gem 'devise', github: 'plataformatec/devise', branch: :rails4
   gem 'formtastic', github: 'justinfrench/formtastic', branch: "rails4beta"
   gem 'activeadmin', github: 'gussan/active_admin', branch: :rails4
