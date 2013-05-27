@@ -81,6 +81,14 @@ To register your first model, run:
 This creates a file at <tt>app/admin/my_model_names.rb</tt> for configuring the resource.
 Refresh your web browser to see the interface.
 
+== Precompile problem on Rails4.0 beta
+
+sprockets-rails has a problem with asset_paths.
+* https://github.com/rails/sprockets-rails/pull/36
+
+To solve this, add below line to `config/application.rb`:
+  config.assets.precompile += %w(active_admin.js active_admin.css active_admin/print.css)
+
 == Upgrading
 
 When upgrading to a new version of ActiveAdmin you may need to run
